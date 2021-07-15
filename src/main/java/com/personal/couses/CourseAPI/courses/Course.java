@@ -1,9 +1,11 @@
-package com.personal.couses.CourseAPI.topic;
+package com.personal.couses.CourseAPI.courses;
 
+import com.personal.couses.CourseAPI.topic.Topic;
 import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 
 @Getter
@@ -12,9 +14,11 @@ import javax.persistence.Id;
 @ToString
 @Entity
 @AllArgsConstructor
-public class Topic {
+public class Course {
     @Id
     private String id;
     private String name;
     private String description;
+    @ManyToOne
+    private Topic topic;
 }
